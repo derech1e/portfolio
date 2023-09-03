@@ -34,11 +34,65 @@ const socials = [
 
 const skills = [
 	{
-		icon: "logos:javascript",
-		label: "JavaScript",
-		link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-		details: "Node.js, TypeScript, React, Vue.js, Svelte"
-	}
+		icon: "logos:java",
+		label: "Java",
+		link: "https://www.java.com",
+		details: 8,
+	},
+	{
+		icon: "logos:nodejs-icon",
+		label: "Node.js",
+		link: "https://nodejs.org",
+		details: 5,
+	},
+	{
+		icon: "logos:react",
+		label: "React",
+		link: "https://reactjs.org",
+		details: 3,
+	},
+	{
+		icon: "logos:typescript-icon",
+		label: "TypeScript",
+		link: "https://www.typescriptlang.org/",
+		details: 3,
+	},
+	{
+		icon: "logos:prisma",
+		label: "Prisma",
+		link: "https://www.prisma.io/",
+		details: 2,
+	},
+	{
+		icon: "logos:astro",
+		label: "Astro",
+		link: "https://www.astro.build/",
+		details: -1,
+	},
+	{
+		icon: "logos:swift",
+		label: "Swift",
+		link: "https://www.swift.org/",
+		details: 2,
+	},
+	{
+		icon: "logos:nestjs",
+		label: "NestJS",
+		link: "https://nestjs.com/",
+		details: 2,
+	},
+	{
+		icon: "logos:c-sharp",
+		label: "C#",
+		link: "https://learn.microsoft.com/en-us/dotnet/csharp/",
+		details: 4,
+	},
+	{
+		icon: "logos:nextjs-icon",
+		label: "Next.js",
+		link: "https://nextjs.org/",
+		details: 1,
+	},
 ]
 ---
 
@@ -73,8 +127,17 @@ const skills = [
 				<ol class="space-y-2">
 					<li>
 						{
-							skills.map(item => {
-								return <ListElement icon={item.icon} link={item.link} label={item.label} details={item.details}/>
+							skills.sort((a, b) => b.details - a.details).map(item => {
+								return <ListElement icon={item.icon} link={item.link} label={item.label} details={() => {
+									switch (item.details) {
+										case -1:
+											return "Just now 👀";
+										case 1:
+											return item.details + " year";
+										default:
+											return item.details + " years";
+									}
+								}}/>
 							})
 						}
 					</li>
