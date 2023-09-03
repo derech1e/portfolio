@@ -26,9 +26,16 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PORTFOLIO_GITHUB_ACTIONS }}
+          known_hosts: unnecessary
+
+      - name: Adding Known Hosts
+        run: ssh-keyscan -p 22 -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
       - name: Deploy to VPS
         run: |
           rsync -avz ${{ github.workspace }}/dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/html/
-        env:
-          DEPLOY_KEY: ${{ secrets.SSH_PORTFOLIO_GITHUB_ACTIONS }}
 
