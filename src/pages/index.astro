@@ -31,6 +31,15 @@ const socials = [
 		details: "contact@nuerk-solutions.de",
 	}
 ]
+
+const skills = [
+	{
+		icon: "logos:javascript",
+		label: "JavaScript",
+		link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+		details: "Node.js, TypeScript, React, Vue.js, Svelte"
+	}
+]
 ---
 
 <MainLayout title="Thomas Nürk">
@@ -53,6 +62,18 @@ const socials = [
 					<li>
 						{
 							socials.map(item => {
+								return <ListElement icon={item.icon} link={item.link} label={item.label} details={item.details}/>
+							})
+						}
+					</li>
+				</ol>
+			</ListLayout>
+
+			<ListLayout title="Skills">
+				<ol class="space-y-2">
+					<li>
+						{
+							skills.map(item => {
 								return <ListElement icon={item.icon} link={item.link} label={item.label} details={item.details}/>
 							})
 						}
