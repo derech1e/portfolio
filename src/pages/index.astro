@@ -1,0 +1,70 @@
+---
+import RepositoryCard from "../components/RepositoryCard.astro";
+import HeaderLayout from "../layouts/HeaderLayout.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import ListLayout from "../layouts/ListLayout.astro";
+import ListElement from "../components/ListElement.astro";
+
+const socials = [
+	{
+		icon: "logos:github-icon",
+		link: "https://github.com/derech1e",
+		label: "GitHub",
+		details: "derech1e"
+	},
+	{
+		icon: "logos:twitter",
+		link: "https://twitter.com/derech1e",
+		label: "Twitter",
+		details: "derech1e"
+	},
+	{
+		icon: "logos:discord-icon",
+		link: "https://discord.com/users/235088799074484992",
+		label: "Discord",
+		details: "Thomas#0840 | derech1e"
+	},
+	{
+		icon: "mdi:email",
+		link: "mailto:info@nuerk-solutions.de",
+		label: "Mail",
+		details: "contact@nuerk-solutions.de",
+	}
+]
+---
+
+<MainLayout title="Thomas Nürk">
+	<HeaderLayout>
+			<h1 class="sm:text-6xl text-5xl mb-8 font-bold text-gray-900 dark:text-gray-100">Software Engineer from Germany</h1>
+			<p class="text-3xl font-semibold">👋 Hello!</p>
+			<p class="leading-relaxed text-gray-700 dark:text-gray-300 text-xl">My name is Thomas Nürk, a 21-year-old software developer with a focus on web development based near Dresden, Germany.</p>
+			<p class="my-4 leading-relaxed text-gray-700 dark:text-gray-300 text-xl">Currently, I'm studying computer science at <a class="text-blue-500 hover:underlin" href="https://tu-dresden.de/" target="_blank">TU Dresden</a>. I enjoy seeking out creative solutions to complex problems and building things that are simple but extremely efficient both in performance and data processing.
+				In my free time I like contribute primarily to my own projects.</p>
+	</HeaderLayout>
+	<section class="grid-cols-1 lg:grid-cols-2 grid w-full gap-4">
+		<div class="flex flex-col gap-4">
+			<RepositoryCard/>
+			<RepositoryCard/>
+			<RepositoryCard/>
+		</div>
+		<div class="space-y-10 lg:pl-16 xl:pl-24">
+			<ListLayout title="Social & Contact">
+				<ol class="space-y-2">
+					<li>
+						{
+							socials.map(item => {
+								return <ListElement icon={item.icon} link={item.link} label={item.label} details={item.details}/>
+							})
+						}
+					</li>
+				</ol>
+			</ListLayout>
+		</div>
+	</section>
+</MainLayout>
+
+<style is:global>
+	.h-center {
+		@apply flex items-center;
+	}
+</style>

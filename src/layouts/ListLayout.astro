@@ -1,0 +1,12 @@
+---
+interface Props {
+    title: string;
+}
+
+const { title = "Social & Contact" } = Astro.props;
+---
+
+<div class="flex flex-col gap-4 rounded-md p-4 transition-colors duration-200 dark:hover:border-neutral-400 hover:border-neutral-700 border-0.5 border-neutral-600">
+    <h2 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">{title}</h2>
+    <slot />
+</div>
