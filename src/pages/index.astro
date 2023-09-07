@@ -3,7 +3,7 @@ import RepositoryCard from "../components/RepositoryCard.astro";
 import HeaderLayout from "../layouts/HeaderLayout.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import ListLayout from "../layouts/ListLayout.astro";
-import ListElement from "../components/ListElement.astro";
+import ListElement from "../components/SocialListElement.astro";
 
 const socials = [
 	{
@@ -103,6 +103,7 @@ const skills = [
 			<p class="leading-relaxed text-gray-700 dark:text-gray-300 text-xl">My name is Thomas Nürk, a 21-year-old software developer with a focus on web development based near Dresden, Germany.</p>
 			<p class="my-4 leading-relaxed text-gray-700 dark:text-gray-300 text-xl">Currently, I'm studying computer science at <a class="text-blue-500 hover:underlin" href="https://tu-dresden.de/" target="_blank">TU Dresden</a>. I enjoy seeking out creative solutions to complex problems and building things that are simple but extremely efficient both in performance and data processing.
 				In my free time I like contribute primarily to my own projects.</p>
+		<a class="bg-red-600 px-2 my-5 rounded text-white text-xl" href="/cv">CV</a>
 	</HeaderLayout>
 	<section class="grid-cols-1 lg:grid-cols-2 grid w-full gap-4">
 		<div class="flex flex-col gap-4">
@@ -146,9 +147,3 @@ const skills = [
 		</div>
 	</section>
 </MainLayout>
-
-<style is:global>
-	.h-center {
-		@apply flex items-center;
-	}
-</style>

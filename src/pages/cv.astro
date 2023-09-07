@@ -1,0 +1,23 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import CvListElement from "../components/CvListElement.astro";
+---
+
+<MainLayout className="space-y-14">
+    <h1 class="text-4xl dark:text-white text-center font-bold">curriculum vitae</h1>
+    <div class="flex flex-row justify-center items-center">
+        <ul class="basis-3/5">
+            <CvListElement title="BSZ für Elektrotechnik Dresden" subTitle="Abitur, Training as IT specialist" startDate={new Date("August 1, 2019")} endDate={new Date("July 1, 2023")} />
+            <CvListElement title="Robotron Datenbank-Software GmbH · Azubi" subTitle="Training as IT specialist" startDate={new Date("August 1, 2020")} endDate={new Date("July 1, 2023")} />
+            <CvListElement title="Technische Universität Dresden" subTitle="Bachelor, IT specialist" startDate={new Date("Sep 1, 2023")} endDate={new Date("Oct 1, 2023")} />
+        </ul>
+        <div class="basis-1/5" />
+    </div>
+</MainLayout>
+
+<style>
+
+    p {
+        @apply text-xl;
+    }
+</style>
