@@ -4,9 +4,10 @@ import CopyrightFooter from "../components/CopyrightFooter.astro";
 import {ViewTransitions} from "astro:transitions";
 interface Props {
 	title: string;
+	className: string;
 }
 
-const { title } = Astro.props;
+const { title, className } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -22,7 +23,7 @@ const { title } = Astro.props;
 	</head>
 	<body class="dark:bg-neutral-900 bg-zinc-50 dark:text-neutral-400 w-full">
 	<div class="space-y-8 container mx-auto px-4 py-8 bg-white dark:bg-neutral-800 min-h-screen w-full">
-		<main class="flex-grow px-8 md:px-16 w-full">
+		<main class:list={["flex-grow w-full", className]}>
 		<slot />
 		</main>
 		<footer class="flex-col justify-center items-center space-x-4">

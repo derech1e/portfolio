@@ -2,7 +2,7 @@
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<MainLayout>
+<MainLayout className="md:px-8">
     <div lang="de">
     <article>
         <header class="mb-8">
@@ -265,12 +265,11 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 <style>
     body {
-        font-size: 20pt;
-        @apply hyphens-auto;
+        @apply hyphens-auto md:text-2_5xl text-xl;
     }
 
     article {
-        @apply transition-opacity duration-200 ease-in-out mb-0 relative p-14 px-10 w-full;
+        @apply transition-opacity duration-200 ease-in-out mb-0 relative py-4 px-1 md:py-14 md:px-5 w-full;
     }
 
     b, h1, h2 {
