@@ -22,7 +22,8 @@ const { title, className } = Astro.props;
 		<ViewTransitions />
 	</head>
 	<body class="dark:bg-neutral-900 bg-zinc-50 dark:text-neutral-400 w-full">
-	<div class="space-y-8 container mx-auto px-4 py-8 bg-white dark:bg-neutral-800 min-h-screen w-full">
+	<!--Stick footer to the bottom: flex flex-col justify-between-->
+	<div class="space-y-8 container mx-auto px-4 py-8 bg-white dark:bg-neutral-800 min-h-screen w-full flex flex-col justify-between">
 		<main class:list={["flex-grow w-full", className]}>
 		<slot />
 		</main>
