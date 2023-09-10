@@ -1,0 +1,19 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import {getCollection, type CollectionEntry} from "astro:content";
+
+
+const blogs: CollectionEntry<'blog'>[] = await getCollection("blog", ({data}) => {
+    // ts-ignore
+    return data.isDraft !== false;
+});
+---
+
+<MainLayout>
+    <h1>Blog overview</h1>
+    <div class="">
+        {blogs.map(blog => (
+                <a href={`/blog/${blog.slug}/`} class="py-2 px-3 border-0.5 border-neutral-400">{blog.data.title}</a>
+        ))}
+    </div>
+</MainLayout>
