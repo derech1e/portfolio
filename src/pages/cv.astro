@@ -1,7 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import CvListElement from "../components/CvListElement.astro";
-import { Sprite } from 'astro-icon'
+import BackButton from "../components/BackButton.astro";
 
 const cvElements = [
  {
@@ -34,9 +34,7 @@ const cvElements = [
 
 <MainLayout className="w-full">
     <h1 class="text-4xl dark:text-white text-center font-bold mb-16">curriculum vitae</h1>
-    <Sprite.Provider>
-        <a href="/" class="flex items-end justify-end mr-16"><Sprite class="w-12 h-12 absolute dark:hover:bg-neutral-700 hover:bg-neutral-300 dark:hover:border-neutral-400 hover:border-neutral-700" name={"uiw:close-square-o"} /></a>
-    </Sprite.Provider>
+    <BackButton href="/" />
 
     <div class="flex flex-row justify-center items-center">
         <ul class="basis-3/5">

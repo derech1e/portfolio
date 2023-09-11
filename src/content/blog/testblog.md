@@ -1,7 +1,7 @@
 ---
-title: Test2
-isDraft: true
-tags: ['test', 'test2']
+title: Testblog zum Testen aller Markdown-Elemente
+subtitle: subtitle
+tags: ['TestTag']
 publishDate: 2020-01-01
 ---
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.

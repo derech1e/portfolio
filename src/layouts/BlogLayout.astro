@@ -9,7 +9,7 @@ const {title, tags, publishDate} = Astro.props;
 ---
 
 <MainLayout className="items-center justify-center flex">
-    <article class="prose dark:prose-invert prose-code:before:content-none prose-code:after:content-none w-full">
+    <article class="prose dark:prose-invert prose-code:before:content-none prose-code:after:content-none prose-quoteless w-full">
         <slot />
         <footer>
             <p>Published on {publishDate}</p>

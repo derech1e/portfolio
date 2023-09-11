@@ -33,4 +33,12 @@ const { title, className } = Astro.props;
 
 <style is:global>
 	@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600,700,300italic,400italic');
+
+	.border {
+		@apply border-0.5 border-neutral-600;
+	}
+
+	.borderHover{
+		@apply dark:hover:bg-neutral-700 hover:bg-neutral-300 dark:hover:border-neutral-400 hover:border-neutral-700 transition-colors duration-200 ease-in-out;
+	}
 </style>

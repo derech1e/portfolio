@@ -3,17 +3,14 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import {getCollection, type CollectionEntry} from "astro:content";
 
 
-const blogs: CollectionEntry<'blog'>[] = await getCollection("blog", ({data}) => {
-    // ts-ignore
-    return data.isDraft !== false;
-});
+const blogs: CollectionEntry<'blog'>[] = await getCollection("blog");
 ---
 
 <MainLayout>
-    <h1>Blog overview</h1>
-    <div class="">
+    <h1 class="text-4xl text-center">Blog overview</h1>
+    <div class="grid grid-cols-3 m-5 space-x-4">
         {blogs.map(blog => (
-                <a href={`/blog/${blog.slug}/`} class="py-2 px-3 border-0.5 border-neutral-400">{blog.data.title}</a>
+                <a href={`/blog/${blog.slug}/`} class="p-16 text-2xl border borderHover rounded">{blog.data.title}</a>
         ))}
     </div>
 </MainLayout>
