@@ -1,22 +1,20 @@
 ---
 import type {CollectionEntry} from "astro:content";
 import MainLayout from "./MainLayout.astro";
+import '../styles/markdown.css';
 
 type Props = CollectionEntry<'blog'>['data'];
 
 const {title, tags, publishDate} = Astro.props;
 ---
 
-<MainLayout>
-    <header>
-        <p>{title}</p>
-    </header>
-    <main>
+<MainLayout className="items-center justify-center flex">
+    <article class="prose dark:prose-invert prose-code:before:content-none prose-code:after:content-none w-full">
         <slot />
-    </main>
-    <footer>
-        <p>Published on {publishDate}</p>
-        <p class="mb-5">Tags: {tags.join(', ')}</p>
-        <a href="/blog/" class="px-3 py-2 border-0.5 mt-5">Back</a>
-    </footer>
+        <footer>
+            <p>Published on {publishDate}</p>
+            <p class="mb-5">Tags: {tags.join(', ')}</p>
+            <a href="/blog/" class="px-3 py-2 border-0.5 mt-5">Back</a>
+        </footer>
+    </article>
 </MainLayout>

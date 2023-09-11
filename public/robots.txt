@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://info.nuerk-solutions.de/sitemap-index.xml

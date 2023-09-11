@@ -2,7 +2,7 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-    content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}', './NavBar.jsx'],
+    content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
     theme: {
         fontFamily: {
             sans: ["Source Sans Pro", ...defaultTheme.fontFamily.sans],
@@ -17,8 +17,17 @@ module.exports = {
 					lineHeight: '1.5',
 				}
                 ]
+            },
+            typography: {
+                DEFAULT: {
+                    css: {
+                        maxWidth: '75%', // add required value here
+                    }
+                }
             }
         },
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/typography'),
+    ],
 }
