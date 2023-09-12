@@ -9,9 +9,7 @@ interface Props {
 const {href, className} = Astro.props;
 ---
 
-<Sprite.Provider>
-    <a href={href} class:list={["flex items-end justify-end", className]}>
-        <Sprite class="w-8 h-8 sm:w-12 sm:h-12 absolute dark:hover:bg-neutral-700 hover:bg-neutral-300 dark:hover:border-neutral-400 hover:border-neutral-700"
-                name={"uiw:close-square-o"}/>
-    </a>
-</Sprite.Provider>
+<a href={href} class:list={["flex items-end justify-end", className]}>
+    <Sprite class="w-8 h-8 sm:w-12 sm:h-12 absolute dark:hover:bg-neutral-700 hover:bg-neutral-300 dark:hover:border-neutral-400 hover:border-neutral-700"
+            name={"uiw:close-square-o"}/>
+</a>

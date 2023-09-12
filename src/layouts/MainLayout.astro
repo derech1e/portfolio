@@ -3,6 +3,7 @@ import CopyrightFooter from "../components/CopyrightFooter.astro";
 // noinspection TypeScriptCheckImport
 import {ViewTransitions} from "astro:transitions";
 import BaseHead from "../components/BaseHead.astro";
+
 interface Props {
 	title: string;
 	className: string;
@@ -21,7 +22,9 @@ const { title, className } = Astro.props;
 	<!--Stick footer to the bottom: flex flex-col justify-between-->
 	<div class="space-y-8 container mx-auto px-4 py-8 bg-white dark:bg-neutral-800 min-h-screen w-full flex flex-col justify-between">
 		<main class:list={["w-full", className]}>
-		<slot />
+			<Sprite.Provider>
+				<slot />
+			</Sprite.Provider>
 		</main>
 		<footer class="flex-col justify-center items-center space-x-4 text-xl">
 			<p class="text-center text-neutral-900 dark:text-white">Build with ❤️ using Astro 3.0.5 by Thomas Nürk</p>
@@ -32,7 +35,7 @@ const { title, className } = Astro.props;
 </html>
 
 <style is:global>
-	@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600,700,300italic,400italic');
+	@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600,700,300italic,400italic&display=swap');
 
 	.border {
 		@apply border-0.5 border-neutral-600;
